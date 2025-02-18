@@ -16,7 +16,9 @@
     Icon="/Assets/NotifyIcon1.ico"
     ShowInTaskbar="True"
     WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    TransparencyLevelHint="Mica"
+    ExtendClientAreaToDecorationsHint="False">
     <dialogHost:DialogHost
         Background="Gray"
         CloseOnClickAway="True"
