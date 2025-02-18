@@ -4,15 +4,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:dialogHost="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
     xmlns:resx="clr-namespace:ServiceLib.Resx;assembly=ServiceLib"
-    xmlns:semi="https://irihi.tech/semi"
+    xmlns:sty="using:FluentAvalonia.Styling"
     xmlns:vms="clr-namespace:ServiceLib.ViewModels;assembly=ServiceLib"
     x:DataType="vms:StatusBarViewModel"
     Name="Furray"
     RequestedThemeVariant="Default">
     <Application.Styles>
-        <semi:SemiTheme />
+        <sty:FluentAvaloniaTheme />
         <StyleInclude Source="Assets/GlobalStyles.axaml" />
-        <StyleInclude Source="avares://Semi.Avalonia.DataGrid/Index.axaml" />
         <dialogHost:DialogHostStyles />
     </Application.Styles>
     <Application.Resources>

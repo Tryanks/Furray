@@ -1,4 +1,3 @@
-using System.Reactive.Linq;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Notifications;
@@ -7,7 +6,6 @@ using Avalonia.Media;
 using Avalonia.Styling;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
-using Semi.Avalonia;
 
 namespace Furray.Desktop.ViewModels
 {
@@ -88,10 +86,10 @@ namespace Furray.Desktop.ViewModels
                 {
                     nameof(ETheme.Dark) => ThemeVariant.Dark,
                     nameof(ETheme.Light) => ThemeVariant.Light,
-                    nameof(ETheme.Aquatic) => SemiTheme.Aquatic,
-                    nameof(ETheme.Desert) => SemiTheme.Desert,
-                    nameof(ETheme.Dusk) => SemiTheme.Dusk,
-                    nameof(ETheme.NightSky) => SemiTheme.NightSky,
+                    // nameof(ETheme.Aquatic) => SemiTheme.Aquatic,
+                    // nameof(ETheme.Desert) => SemiTheme.Desert,
+                    // nameof(ETheme.Dusk) => SemiTheme.Dusk,
+                    // nameof(ETheme.NightSky) => SemiTheme.NightSky,
                     _ => ThemeVariant.Default,
                 };
             }
