@@ -31,7 +31,7 @@
 	<ItemGroup>
 		<ProjectCapability Include="Avalonia" />
 		<AvaloniaResource Include="Assets\**" />
-		<ProjectReference Include="..\ServiceLib\ServiceLib.csproj" />
+		<ProjectReference Include="..\..\v2rayN\v2rayN\ServiceLib\ServiceLib.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
