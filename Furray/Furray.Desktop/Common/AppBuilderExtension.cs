@@ -7,7 +7,7 @@ namespace Furray.Desktop.Common
     {
         public static AppBuilder WithFontByDefault(this AppBuilder appBuilder)
         {
-            var uri = Path.Combine(Global.AvaAssets, "Fonts#Noto Sans SC");
+            var uri = Path.Combine(FurrayGlobal.AvaAssets, "Fonts#Noto Sans SC");
             return appBuilder.With(new FontManagerOptions()
             {
                 DefaultFamilyName = uri,

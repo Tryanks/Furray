@@ -6,3 +6,8 @@ global using ServiceLib.Handler;
 global using ServiceLib.Models;
 global using ServiceLib.Resx;
 global using ServiceLib.ViewModels;
+
+public static class FurrayGlobal
+{
+    public const string AvaAssets = "avares://Furray/Assets/";
+}

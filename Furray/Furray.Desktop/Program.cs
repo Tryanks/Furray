@@ -36,7 +36,7 @@ internal class Program
         }
         else
         {
-            _ = new Mutex(true, "v2rayN", out var bOnlyOneInstance);
+            _ = new Mutex(true, "Furray", out var bOnlyOneInstance);
             if (!bOnlyOneInstance)
             {
                 Environment.Exit(0);

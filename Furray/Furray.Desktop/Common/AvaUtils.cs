@@ -48,7 +48,7 @@ namespace Furray.Desktop.Common
                 return new(fileName);
             }
 
-            var uri = new Uri(Path.Combine(Global.AvaAssets, $"NotifyIcon{index}.ico"));
+            var uri = new Uri(Path.Combine(FurrayGlobal.AvaAssets, $"NotifyIcon{index}.ico"));
             using var bitmap = new Bitmap(AssetLoader.Open(uri));
             return new(bitmap);
         }
