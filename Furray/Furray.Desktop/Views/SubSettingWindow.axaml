@@ -21,7 +21,6 @@
         Identifier="dialogHostSub">
         <DockPanel Classes="Margin8">
             <StackPanel
-                Classes="Margin8"
                 DockPanel.Dock="Top"
                 Orientation="Horizontal">
                 <Menu>
