@@ -35,7 +35,7 @@
                 IsCancel="True" />
         </StackPanel>
 
-        <TabControl HorizontalContentAlignment="Stretch">
+        <TabControl HorizontalContentAlignment="Stretch" MaxWidth="900">
             <TabItem Header="{x:Static resx:ResUI.TbSettingsCore}">
                 <ScrollViewer VerticalScrollBarVisibility="Visible">
                     <StackPanel Spacing="4">
