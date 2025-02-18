@@ -341,7 +341,6 @@
             <TabItem Header="{x:Static resx:ResUI.TbSettingsN}">
                 <ScrollViewer VerticalScrollBarVisibility="Visible">
                     <Grid
-                        Grid.Row="2"
                         Classes="Margin8"
                         ColumnDefinitions="Auto,Auto,*"
                         RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">

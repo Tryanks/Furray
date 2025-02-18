@@ -99,12 +99,15 @@
                         <MenuItem x:Name="menuEditServer" Header="{x:Static resx:ResUI.menuEditServer}" />
                         <MenuItem x:Name="menuSetDefaultServer" Header="{x:Static resx:ResUI.menuSetDefaultServer}" />
                         <MenuItem x:Name="menuRemoveServer" Header="{x:Static resx:ResUI.menuRemoveServer}" />
-                        <MenuItem x:Name="menuRemoveDuplicateServer" Header="{x:Static resx:ResUI.menuRemoveDuplicateServer}" />
+                        <MenuItem x:Name="menuRemoveDuplicateServer"
+                                  Header="{x:Static resx:ResUI.menuRemoveDuplicateServer}" />
                         <MenuItem x:Name="menuCopyServer" Header="{x:Static resx:ResUI.menuCopyServer}" />
                         <MenuItem x:Name="menuShareServer" Header="{x:Static resx:ResUI.menuShareServer}" />
                         <Separator />
-                        <MenuItem x:Name="menuSetDefaultMultipleServer" Header="{x:Static resx:ResUI.menuSetDefaultMultipleServer}" />
-                        <MenuItem x:Name="menuSetDefaultLoadBalanceServer" Header="{x:Static resx:ResUI.menuSetDefaultLoadBalanceServer}" />
+                        <MenuItem x:Name="menuSetDefaultMultipleServer"
+                                  Header="{x:Static resx:ResUI.menuSetDefaultMultipleServer}" />
+                        <MenuItem x:Name="menuSetDefaultLoadBalanceServer"
+                                  Header="{x:Static resx:ResUI.menuSetDefaultLoadBalanceServer}" />
                         <Separator />
                         <MenuItem x:Name="menuMixedTestServer" Header="{x:Static resx:ResUI.menuMixedTestServer}" />
                         <MenuItem x:Name="menuTcpingServer" Header="{x:Static resx:ResUI.menuTcpingServer}" />
@@ -112,7 +115,8 @@
                         <MenuItem x:Name="menuSpeedServer" Header="{x:Static resx:ResUI.menuSpeedServer}" />
                         <MenuItem Header="{x:Static resx:ResUI.menuTestServerResult}">
                             <MenuItem x:Name="menuSortServerResult" Header="{x:Static resx:ResUI.menuSortServerResult}" />
-                            <MenuItem x:Name="menuRemoveInvalidServerResult" Header="{x:Static resx:ResUI.menuRemoveInvalidServerResult}" />
+                            <MenuItem x:Name="menuRemoveInvalidServerResult"
+                                      Header="{x:Static resx:ResUI.menuRemoveInvalidServerResult}" />
                         </MenuItem>
                         <Separator />
                         <MenuItem x:Name="menuMoveToGroup" Header="{x:Static resx:ResUI.menuMoveToGroup}">
@@ -138,12 +142,15 @@
                         <MenuItem x:Name="menuSelectAll" Header="{x:Static resx:ResUI.menuSelectAll}" />
                         <Separator />
                         <MenuItem Header="{x:Static resx:ResUI.menuExport2ClientConfig}">
-                            <MenuItem x:Name="menuExport2ClientConfig" Header="{x:Static resx:ResUI.menuExport2ClientConfig}" />
-                            <MenuItem x:Name="menuExport2ClientConfigClipboard" Header="{x:Static resx:ResUI.menuExport2ClientConfigClipboard}" />
+                            <MenuItem x:Name="menuExport2ClientConfig"
+                                      Header="{x:Static resx:ResUI.menuExport2ClientConfig}" />
+                            <MenuItem x:Name="menuExport2ClientConfigClipboard"
+                                      Header="{x:Static resx:ResUI.menuExport2ClientConfigClipboard}" />
                         </MenuItem>
                         <MenuItem Header="{x:Static resx:ResUI.menuExport2ShareUrl}">
                             <MenuItem x:Name="menuExport2ShareUrl" Header="{x:Static resx:ResUI.menuExport2ShareUrl}" />
-                            <MenuItem x:Name="menuExport2ShareUrlBase64" Header="{x:Static resx:ResUI.menuExport2ShareUrlBase64}" />
+                            <MenuItem x:Name="menuExport2ShareUrlBase64"
+                                      Header="{x:Static resx:ResUI.menuExport2ShareUrlBase64}" />
                         </MenuItem>
                     </ContextMenu>
                 </DataGrid.ContextMenu>

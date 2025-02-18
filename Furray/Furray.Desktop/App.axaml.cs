@@ -7,7 +7,7 @@ using Splat;
 
 namespace Furray.Desktop;
 
-public partial class App : Application
+public class App : Application
 {
     public override void Initialize()
     {
@@ -16,6 +16,7 @@ public partial class App : Application
             Environment.Exit(0);
             return;
         }
+
         AvaloniaXamlLoader.Load(this);
 
         AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
@@ -23,7 +24,7 @@ public partial class App : Application
 
         var ViewModel = new StatusBarViewModel(null);
         Locator.CurrentMutable.RegisterLazySingleton(() => ViewModel, typeof(StatusBarViewModel));
-        this.DataContext = ViewModel;
+        DataContext = ViewModel;
     }
 
     public override void OnFrameworkInitializationCompleted()
@@ -58,14 +59,16 @@ public partial class App : Application
 
     private async void MenuAddServerViaClipboardClick(object? sender, EventArgs e)
     {
-        if (Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+        if (Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
             if (desktop.MainWindow != null)
             {
                 var clipboardData = await AvaUtils.GetClipboardData(desktop.MainWindow);
                 var service = Locator.Current.GetService<MainWindowViewModel>();
                 if (service != null)
+                {
                     _ = service.AddServerViaClipboardAsync(clipboardData);
+                }
             }
         }
     }
@@ -74,7 +77,10 @@ public partial class App : Application
     {
         var service = Locator.Current.GetService<MainWindowViewModel>();
         if (service != null)
+        {
             await service.MyAppExitAsync(true);
+        }
+
         service?.Shutdown(true);
     }
 }

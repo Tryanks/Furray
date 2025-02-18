@@ -26,12 +26,11 @@ internal class Program
         {
             var exePathKey = Utils.GetMd5(Utils.GetExePath());
             var rebootas = (Args ?? Array.Empty<string>()).Any(t => t == Global.RebootAs);
-            ProgramStarted = new EventWaitHandle(false, EventResetMode.AutoReset, exePathKey, out bool bCreatedNew);
+            ProgramStarted = new EventWaitHandle(false, EventResetMode.AutoReset, exePathKey, out var bCreatedNew);
             if (!rebootas && !bCreatedNew)
             {
                 ProgramStarted.Set();
                 Environment.Exit(0);
-                return;
             }
         }
         else
@@ -40,18 +39,19 @@ internal class Program
             if (!bOnlyOneInstance)
             {
                 Environment.Exit(0);
-                return;
             }
         }
     }
 
     // Avalonia configuration, don't remove; also used by visual designer.
     public static AppBuilder BuildAvaloniaApp()
-    => AppBuilder.Configure<App>()
-        .UsePlatformDetect()
-        //.WithInterFont()
-        .WithFontByDefault()
-        .LogToTrace()
-        .UseReactiveUI()
-        .With(new MacOSPlatformOptions { ShowInDock = false });
+    {
+        return AppBuilder.Configure<App>()
+            .UsePlatformDetect()
+            //.WithInterFont()
+            .WithFontByDefault()
+            .LogToTrace()
+            .UseReactiveUI()
+            .With(new MacOSPlatformOptions { ShowInDock = false });
+    }
 }

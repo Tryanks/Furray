@@ -5,75 +5,77 @@ using Avalonia.Threading;
 using Furray.Desktop.Common;
 using ReactiveUI;
 
-namespace Furray.Desktop.Views
+namespace Furray.Desktop.Views;
+
+public partial class MsgView : ReactiveUserControl<MsgViewModel>
 {
-    public partial class MsgView : ReactiveUserControl<MsgViewModel>
+    public MsgView()
     {
-        public MsgView()
+        InitializeComponent();
+
+        ViewModel = new MsgViewModel(UpdateViewHandler);
+
+        this.WhenActivated(disposables =>
         {
-            InitializeComponent();
+            this.Bind(ViewModel, vm => vm.MsgFilter, v => v.cmbMsgFilter.Text).DisposeWith(disposables);
+            this.Bind(ViewModel, vm => vm.AutoRefresh, v => v.togAutoRefresh.IsChecked).DisposeWith(disposables);
+        });
+    }
 
-            ViewModel = new MsgViewModel(UpdateViewHandler);
-
-            this.WhenActivated(disposables =>
-            {
-                this.Bind(ViewModel, vm => vm.MsgFilter, v => v.cmbMsgFilter.Text).DisposeWith(disposables);
-                this.Bind(ViewModel, vm => vm.AutoRefresh, v => v.togAutoRefresh.IsChecked).DisposeWith(disposables);
-            });
-        }
-
-        private async Task<bool> UpdateViewHandler(EViewAction action, object? obj)
+    private async Task<bool> UpdateViewHandler(EViewAction action, object? obj)
+    {
+        switch (action)
         {
-            switch (action)
-            {
-                case EViewAction.DispatcherShowMsg:
-                    if (obj is null)
-                        return false;
+            case EViewAction.DispatcherShowMsg:
+                if (obj is null)
+                {
+                    return false;
+                }
 
-                    Dispatcher.UIThread.Post(() =>
+                Dispatcher.UIThread.Post(() =>
                         ShowMsg(obj),
-                       DispatcherPriority.ApplicationIdle);
-                    break;
-            }
-            return await Task.FromResult(true);
+                    DispatcherPriority.ApplicationIdle);
+                break;
         }
 
-        private void ShowMsg(object msg)
-        {
-            txtMsg.Text = msg.ToString();
-            if (togScrollToEnd.IsChecked ?? true)
-            {
-                txtMsg.CaretIndex = int.MaxValue;
-            }
-        }
+        return await Task.FromResult(true);
+    }
 
-        public void ClearMsg()
+    private void ShowMsg(object msg)
+    {
+        txtMsg.Text = msg.ToString();
+        if (togScrollToEnd.IsChecked ?? true)
         {
-            ViewModel?.ClearMsg();
-            txtMsg.Clear();
+            txtMsg.CaretIndex = int.MaxValue;
         }
+    }
 
-        private void menuMsgViewSelectAll_Click(object? sender, RoutedEventArgs e)
-        {
-            txtMsg.Focus();
-            txtMsg.SelectAll();
-        }
+    public void ClearMsg()
+    {
+        ViewModel?.ClearMsg();
+        txtMsg.Clear();
+    }
 
-        private async void menuMsgViewCopy_Click(object? sender, RoutedEventArgs e)
-        {
-            var data = txtMsg.SelectedText.TrimEx();
-            await AvaUtils.SetClipboardData(this, data);
-        }
+    private void menuMsgViewSelectAll_Click(object? sender, RoutedEventArgs e)
+    {
+        txtMsg.Focus();
+        txtMsg.SelectAll();
+    }
 
-        private async void menuMsgViewCopyAll_Click(object? sender, RoutedEventArgs e)
-        {
-            var data = txtMsg.Text.TrimEx();
-            await AvaUtils.SetClipboardData(this, data);
-        }
+    private async void menuMsgViewCopy_Click(object? sender, RoutedEventArgs e)
+    {
+        var data = txtMsg.SelectedText.TrimEx();
+        await AvaUtils.SetClipboardData(this, data);
+    }
 
-        private void menuMsgViewClear_Click(object? sender, RoutedEventArgs e)
-        {
-            ClearMsg();
-        }
+    private async void menuMsgViewCopyAll_Click(object? sender, RoutedEventArgs e)
+    {
+        var data = txtMsg.Text.TrimEx();
+        await AvaUtils.SetClipboardData(this, data);
+    }
+
+    private void menuMsgViewClear_Click(object? sender, RoutedEventArgs e)
+    {
+        ClearMsg();
     }
 }

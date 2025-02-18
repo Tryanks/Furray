@@ -21,7 +21,8 @@
             <Menu>
                 <MenuItem x:Name="menuRuleAdd" Header="{x:Static resx:ResUI.menuRuleAdd}" />
                 <MenuItem x:Name="menuImportRulesFromFile" Header="{x:Static resx:ResUI.menuImportRulesFromFile}" />
-                <MenuItem x:Name="menuImportRulesFromClipboard" Header="{x:Static resx:ResUI.menuImportRulesFromClipboard}" />
+                <MenuItem x:Name="menuImportRulesFromClipboard"
+                          Header="{x:Static resx:ResUI.menuImportRulesFromClipboard}" />
                 <MenuItem x:Name="menuImportRulesFromUrl" Header="{x:Static resx:ResUI.menuImportRulesFromUrl}" />
             </Menu>
         </StackPanel>
@@ -64,8 +65,6 @@
 
                 <TextBox
                     x:Name="txtRemarks"
-                    Grid.Row="0"
-                    Grid.Column="1"
                     Width="300"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center"
@@ -192,7 +191,8 @@
                             <MenuItem x:Name="menuRuleAdd2" Header="{x:Static resx:ResUI.menuRuleAdd}" />
                             <MenuItem x:Name="menuRuleRemove" Header="{x:Static resx:ResUI.menuRuleRemove}" />
                             <MenuItem x:Name="menuRuleSelectAll" Header="{x:Static resx:ResUI.menuSelectAll}" />
-                            <MenuItem x:Name="menuRuleExportSelected" Header="{x:Static resx:ResUI.menuRuleExportSelected}" />
+                            <MenuItem x:Name="menuRuleExportSelected"
+                                      Header="{x:Static resx:ResUI.menuRuleExportSelected}" />
                             <Separator />
                             <MenuItem x:Name="menuMoveTop" Header="{x:Static resx:ResUI.menuMoveTop}" />
                             <MenuItem x:Name="menuMoveUp" Header="{x:Static resx:ResUI.menuMoveUp}" />
